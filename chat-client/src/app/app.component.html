@@ -1,0 +1,11 @@
+<input #message type="text">
+<button (click)="sendMessage(message.value, nickname.value)">Отправить сообщение</button>
+<br>
+<input #nickname type="text" placeholder="никнейм">
+
+
+<ul>
+  <li *ngFor="let userMessage of userMessages | async">
+    {{userMessage.nickname}} : {{userMessage.message}}
+  </li>
+</ul>
